@@ -48,8 +48,22 @@ public class solActivity extends AppCompatActivity {
             tV3.setText("No real solutions");
             tV4.setText("");
         }
-
-
+        if (discriminant == 0 || discriminant > 0) {
+            if (a>0 && c>0)
+                iV.setImageResource(R.drawable.smileup);
+            else if (a>0 && c==0)
+                iV.setImageResource(R.drawable.smile);
+            else if (a>0 && c<0)
+                iV.setImageResource(R.drawable.smiledown);
+            else if (a<0 && c>0)
+                iV.setImageResource(R.drawable.sadup);
+            else if (a<0 && c==0)
+                iV.setImageResource(R.drawable.sad);
+            else if (a<0 && c<0)
+                iV.setImageResource(R.drawable.saddown);
+            else
+                iV.setImageResource(R.drawable.error);
+        }
     }
 
     public void goBack(View view) {
