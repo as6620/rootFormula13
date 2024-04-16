@@ -47,27 +47,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goCal(View view) {
-        String a = etA.getText().toString();
-        String b = etA.getText().toString();
-        String c = etA.getText().toString();
+        String aStr = etA.getText().toString();
+        String bStr = etB.getText().toString();
+        String cStr = etC.getText().toString();
 
 
-        if (a.isEmpty() | a.equals("-") | a.equals("-.") | a.equals("+") | a.equals("+.") | b.isEmpty() | b.equals("-") | b.equals("-.") | b.equals("+") | b.equals("+.") | c.isEmpty() | c.equals("-") | c.equals("-.") | c.equals("+") | c.equals("+."))
+        if (aStr.isEmpty() | aStr.equals("-") | aStr.equals("-.") | aStr.equals("+") | aStr.equals("+.") | bStr.isEmpty() | bStr.equals("-") | bStr.equals("-.") | bStr.equals("+") | bStr.equals("+.") | cStr.isEmpty() | cStr.equals("-") | cStr.equals("-.") | cStr.equals("+") | cStr.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
         else {
-            double aDouble = Double.parseDouble(a);
+            double aDouble = Double.parseDouble(aStr);
             if (aDouble == 0)
                 Toast.makeText(this, "'a' can't be 0", Toast.LENGTH_SHORT).show();
             else {
                 Intent si = new Intent(this, solActivity.class);
                 si.putExtra("a", aDouble);
-                si.putExtra("b", Double.parseDouble(b));
-                si.putExtra("c", Double.parseDouble(c));
+                si.putExtra("b", Double.parseDouble(bStr));
+                si.putExtra("c", Double.parseDouble(cStr));
                 startActivityForResult(si, REQUEST_CODE);
             }
         }
     }
-
     @Override
     protected void onActivityResult(int source, int result, @Nullable Intent data_back) {
         super.onActivityResult(source, result, data_back);

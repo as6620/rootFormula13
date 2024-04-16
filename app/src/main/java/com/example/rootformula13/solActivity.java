@@ -34,6 +34,7 @@ public class solActivity extends AppCompatActivity {
         double c = gi.getDoubleExtra("c", 0);
 
         double discriminant = b * b - 4 * a * c;
+        tV3.setText(""+discriminant);
         if (discriminant > 0) {
             x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
@@ -47,6 +48,8 @@ public class solActivity extends AppCompatActivity {
             tV3.setText("No real solutions");
             tV4.setText("");
         }
+
+
     }
 
     public void goBack(View view) {
