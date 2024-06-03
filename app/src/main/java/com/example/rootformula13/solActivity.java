@@ -59,13 +59,11 @@ public class solActivity extends AppCompatActivity {
                 iV.setImageResource(R.drawable.sadup);
             else if (a<0 && c==0)
                 iV.setImageResource(R.drawable.sad);
-            else
+            else if (a<0 && c<0)
                 iV.setImageResource(R.drawable.saddown);
-//            else if (a<0 && c<0)
-//                iV.setImageResource(R.drawable.saddown);
-//            else
-//                iV.setImageResource(R.drawable.error);
         }
+        else
+            iV.setImageResource(R.drawable.error);
     }
 
     public void goBack(View view) {
